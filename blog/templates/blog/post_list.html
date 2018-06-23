@@ -3,20 +3,16 @@
         <title>Django Girls blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Aleksandra Django Girls Blog</a></h1>
-        </div>
+      <div>
+          <h1><a href="/">Django Girls Blog</a></h1>
+      </div>
 
-        <div>
-            <p>published: 23.06.2018, 16:22</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Hello! I am from Russia. Sain Petersburg is very beautiful city.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>I love Python</p>
-        </div>
+      {% for post in posts %}
+          <div>
+              <p>published: {{ post.published_date }}</p>
+              <h1><a href="">{{ post.title }}</a></h1>
+              <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+      {% endfor %}
     </body>
 </html>
